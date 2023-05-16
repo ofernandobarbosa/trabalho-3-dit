@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="icon" type="image/x-icon" href="./src/img/tads.jpg">
+    <!-- Sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!--  -->
+    <title>Cadastro de usuário</title>
+
+</head>
+
+<body>
+    <div class="box">
+        <dialog>
+            <div id="passwordParameters" data-pagekey="alphanumeric" class=" p-3 flex">
+                <img src="./src/img/pass.png" alt="Imagem de um cadeado simbolizando uma senha" class="img-fluid pb-4"
+                    style="width: 20em;">
+                <form>
+                    <div class="form-group">
+                        <label for="pwLength" class="form-label">Quantos caracteres deseja?</label>
+                        <input type="number" class="form-control" name="l" id="pwLength" value="8">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwSymbols" class="mr-2 form-label">Incluir simbolos?</label>
+                        <input type="checkbox" class="ml-2 checkbox" name="sym" id="pwSymbols" value="y"
+                            data-uncheckedvalue="n">
+                    </div>
+
+                    <button type="button" class="btn btn-dark float-right" id="btn-generate"> Gerar </button>
+                </form>
+
+            </div>
+        </dialog>
+
+        <div class="card bg-gradient  p-5" style="border-radius: 1em;">
+            <img src="./src/img/tads.jpg" alt="Logotipo TADS" class="img-fluid pb-4">
+            <form>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail1"
+                        placeholder="Insira seu melhor email" required />
+                </div>
+                <small class="form-text text-muted"> Sua senha deve conter pelo menos 8 caracteres.</small>
+                <div class="input-group mb-3" id="show_hide_password">
+                    <input type="password" class="form-control" id="password" placeholder="Digite uma senha" required />
+                    <div class="input-group-append">
+                        <button type="button" class="button input-group-text" style="display:inline;">🥸</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3" id="show_hide_password">
+                        <input type="password" class="form-control" id="passwordCheck" placeholder="Digite novamente sua senha" required />
+                        <div class="input-group-append">
+                            <button type="button" class="button input-group-text" style="display:inline;">🥸</button>
+                        </div>
+                    </div>
+                    <div id="validarSenha" class="invalid-feedback text-end">As senhas não são iguais</div>
+                </div>
+                <div class="form-row">
+                    <button type="button" class="btn btn-dark col m-1" id="btn-open-modal">Gerar uma senha
+                        segura</button>
+                    <button type="submit" class="btn btn-dark col m-1" id="btn-cadastrar">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./src/index.js"></script>
+</body>
+
+</html>
