@@ -30,7 +30,7 @@ async function cadastrar() {
       modalGeneatePass.close();
       fireSweetAlert(
         "A senha informada não é segura.",
-        `Senha está entre os dados vazados por cybercriminosos \n Foram encontradas ${hasPwned.n} ocorrências`,
+        `Senha está entre os dados vazados por cybercriminosos. \n Foram encontradas ${hasPwned.n} ocorrências`,
         "error"
       );
     } else {
