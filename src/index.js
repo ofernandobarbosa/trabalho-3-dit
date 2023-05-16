@@ -24,7 +24,7 @@ for(let form of forms){
 
 async function cadastrar() {
 
-  if(passwordCheck.value != ""){
+  if(checkPass()){
     const hasPwned = await checkPassPwned(passwordCheck.value)
     if (hasPwned.pwnd) {
       modalGeneatePass.close();
@@ -124,10 +124,13 @@ async function convertToSha1(str) {
 function checkPass() {
   if (password.value.length == 0) {
     password.setAttribute("class", "form-control");
+    return false
   } else if (password.value.length < 8) {
     password.setAttribute("class", "form-control is-invalid");
+    return false
   } else if (password.value.length >= 8) {
     password.setAttribute("class", "form-control is-valid");
+    return true
   }
 }
 
